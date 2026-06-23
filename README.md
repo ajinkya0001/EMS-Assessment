@@ -1,194 +1,186 @@
 # EMS Playwright Automation Assessment
 
-## Overview
+## Project Overview
 
-This project contains an automated testing framework developed using Playwright for the Employee Management System (EMS) application.
+This project contains automated UI tests for the Employee Management System (EMS) application using Playwright.
 
-The framework follows industry-standard automation practices including:
+The objective of this project is to validate the core functionalities of the EMS application including:
 
-* Page Object Model (POM)
-* Reusable Methods
-* Test Data Separation
-* Assertions
-* HTML Reporting
-* Screenshots on Failure
-* Video Recording
-* Trace Files
-
----
-
-## Application Under Test
-
-### Frontend
-
-* React + Vite
-* URL: http://localhost:5173
-
-### Employee Management Backend
-
-* Spring Boot
-* URL: http://localhost:8080
-
-### Authentication Backend
-
-* Node.js + Express + MongoDB
-* URL: http://localhost:5001
+* Employee CRUD Operations
+* Login Page Verification
+* Dashboard UI Verification
+* Navigation Testing
+* Form Validation Testing
+* Forgot Password Page Verification
+* Employee Table Verification
 
 ---
 
-## Framework Structure
+## Tech Stack
 
-```text
+* Playwright
+* JavaScript
+* Node.js
+* HTML Reporter
+
+---
+
+## Project Structure
+
+```
 EMS-Assessment
-
-pages/
 │
-└── EmployeePage.js
-
-tests/
+├── tests
+│   ├── employee.spec.js
+│   ├── login.spec.js
+│   ├── validation.spec.js
+│   ├── navigation.spec.js
+│   ├── dashboardUI.spec.js
+│   ├── table.spec.js
+│   ├── forgot.spec.js
 │
-├── employee.spec.js
-├── login.spec.js
-└── validation.spec.js
-
-testdata/
+├── screenshots
+├── reports
+├── testdata
+├── utils
 │
-└── employeeData.json
-
-utils/
-│
-└── loginHelper.js
-
-playwright.config.js
-
-README.md
-
-AI_USAGE.md
-
-playwright-report/
-
-test-results/
+├── playwright.config.js
+├── package.json
+└── README.md
 ```
 
 ---
 
-## Automated Test Scenarios
+## Test Coverage
 
-### Employee Management Module
+### Employee Management
 
-1. Add Employee
-2. Edit Employee
-3. Delete Employee
+* Add Employee
+* Edit Employee
+* Delete Employee
 
-### Login Module
+### Login Page
 
-4. Verify Sign In Button
-5. Verify Forgot Password Link
+* Verify Sign In Button
+* Verify Forgot Password Link
 
-### Validation Module
+### Dashboard UI
 
-6. Verify Add Employee Form Visibility
-7. Verify Email Field Visibility
+* Verify Dashboard Heading
+* Verify Employee List Heading
+* Verify Add Employee Heading
 
----
+### Navigation
 
-## Test Execution Summary
+* Verify Forgot Password Navigation
 
-Total Test Cases Executed: 7
+### Validation
 
-Passed: 7
+* Verify Add Employee Form Visibility
+* Verify Email Field Visibility
 
-Failed: 0
+### Employee Table
 
-Execution Time: 16.1 Seconds
+* Verify Name Column
+* Verify Email Column
+* Verify Actions Column
 
----
+### Forgot Password Page
 
-## Reporting Configuration
-
-The framework is configured to generate:
-
-* HTML Reports
-* Screenshots on Failure
-* Video Recording on Failure
-* Trace Files on Failure
-
-Playwright Configuration:
-
-* Browser: Chromium
-* Parallel Execution: Disabled
-* Workers: 1
-* Screenshot Capture: Only on Failure
-* Video Capture: Retain on Failure
-* Trace Capture: Retain on Failure
+* Verify Reset Password Heading
+* Verify Email Field Visibility
 
 ---
 
-## Design Approach
+## Playwright Configuration
 
-### Page Object Model (POM)
+Configured Features:
 
-All page interactions are maintained inside reusable page classes to improve maintainability and scalability.
-
-### Reusable Utilities
-
-A reusable login helper utility is implemented for dashboard navigation.
-
-### Test Data Management
-
-Test data is separated into JSON files for better maintainability and readability.
-
-### Assertions
-
-Playwright assertions are used to validate UI behavior and application functionality.
+* HTML Reporting
+* Screenshots
+* Video Recording
+* Trace Generation
+* Chromium Browser Execution
+* Sequential Test Execution
 
 ---
 
-## Execution Steps
+## Installation
 
-### Install Dependencies
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-### Execute Tests
+Install Playwright browsers:
+
+```bash
+npx playwright install
+```
+
+---
+
+## Execute Tests
+
+Run all tests:
 
 ```bash
 npx playwright test
 ```
 
-### Open HTML Report
+Run a specific test file:
+
+```bash
+npx playwright test tests/employee.spec.js
+```
+
+Run in headed mode:
+
+```bash
+npx playwright test --headed
+```
+
+Run in debug mode:
+
+```bash
+npx playwright test --debug
+```
+
+---
+
+## Generate HTML Report
+
+Execute:
 
 ```bash
 npx playwright show-report
 ```
 
----
-
-## Known Limitation
-
-The authentication functionality depends on a Node.js backend connected to MongoDB.
-
-Since MongoDB environment configuration is not available in the repository, full authentication API validation could not be performed.
-
-Therefore:
-
-* Login UI validation was automated.
-* Employee Management functionality was validated successfully through the Spring Boot backend.
+The report will open in the browser.
 
 ---
 
-## AI Usage
+## Artifacts Generated
 
-AI assistance was used for:
+After execution Playwright generates:
 
-* Framework design guidance
-* Playwright Page Object Model creation
-* Test script generation
-* Reporting configuration
-* Documentation preparation
-* Debugging support
+* HTML Report
+* Screenshots
+* Videos
+* Trace Files
+
+These artifacts help in debugging failed test cases.
+
+---
+
+## Test Results
+
+Current Status:
+
+* Total Tests: 23
+* Passed: 23
+* Failed: 0
 
 ---
 
@@ -196,4 +188,4 @@ AI assistance was used for:
 
 Ajinkya Jadkar
 
-Weekly Playwright Assessment Submission
+Playwright Automation Assessment Project

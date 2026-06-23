@@ -87,6 +87,40 @@
 // });
 
 
+// import { defineConfig } from '@playwright/test';
+
+// export default defineConfig({
+
+//   testDir: './tests',
+
+//   fullyParallel: false,
+
+//   workers: 1,
+
+//   reporter: [
+//     ['html'],
+//     ['list']
+//   ],
+
+//   use: {
+
+//     baseURL: 'http://localhost:5173',
+
+//     trace: 'on-first-retry',
+
+//     browserName: 'chromium',
+
+//     headless: false,
+
+//     screenshot: 'on',
+
+//     video: 'on',
+
+//     trace: 'on'
+//   }
+// });
+
+
 import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
@@ -103,15 +137,12 @@ export default defineConfig({
   ],
 
   use: {
-
+    baseURL: 'http://localhost:5173',
     browserName: 'chromium',
-
     headless: false,
-
     screenshot: 'on',
-
     video: 'on',
-
     trace: 'on'
   }
+
 });
